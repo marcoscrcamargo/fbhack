@@ -14,7 +14,7 @@ class UserViewSet(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = serializers.UserSerializer
     filter_backends = (DjangoFilterBackend, OrderingFilter, SearchFilter)
     search_fields = ('first_name',)
-    filter_fields = ('is_specialist', 'rating', 'skills__tag')
+    filter_fields = ('is_specialist', 'rating', 'skills__tag', 'is_availble')
 
 class UserList(generics.ListCreateAPIView):
     queryset = models.User.objects.all()
@@ -30,8 +30,6 @@ class SkillViewSet(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = serializers.UserSerializer
     filter_backends = (DjangoFilterBackend, OrderingFilter, SearchFilter)
     search_fields = ('tag',)
-    filter_fields = ('',)
-
 
 # Question
 class QuestionList(generics.ListCreateAPIView):
