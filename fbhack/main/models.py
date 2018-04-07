@@ -20,6 +20,7 @@ class Question(models.Model):
 	skills = models.ManyToManyField(Skill, verbose_name='question skills')
 
 class Chat(models.Model):
+	started = models.BooleanField(default=False)
 	user_instructor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='instructor')
 	user_student = models.ForeignKey(User, on_delete=models.CASCADE, related_name='student')
 	question = models.ForeignKey(Question, on_delete=models.CASCADE)
