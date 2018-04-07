@@ -8,6 +8,7 @@ class User(models.Model):
 	first_name = models.CharField(max_length=50)
 	last_name = models.CharField(max_length=50)
 	is_specialist = models.BooleanField(default=False)
+	is_available = models.BooleanField(default=False)
 	rating = models.PositiveSmallIntegerField(default=1, validators=[
             MaxValueValidator(5),
             MinValueValidator(1)
