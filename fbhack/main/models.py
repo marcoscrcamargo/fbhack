@@ -18,6 +18,7 @@ class User(models.Model):
 class Question(models.Model):
 	question = models.TextField()
 	skills = models.ManyToManyField(Skill, verbose_name='question skills')
+	interested_especialists = models.ManyToManyField(User, verbose_name='interested specialists')
 
 class Chat(models.Model):
 	started = models.BooleanField(default=False)
