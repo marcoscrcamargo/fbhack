@@ -20,5 +20,6 @@ from main import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^user/$', views.UserViewSet.as_view({'get': 'list'})),
+    url(r'^user/$', views.UserList.as_view()),
+    url(r'^user/(?P<pk>[0-9]+)/$', views.UserViewSet.as_view()),
 ]
